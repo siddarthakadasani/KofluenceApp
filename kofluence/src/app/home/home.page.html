@@ -1,0 +1,107 @@
+<ion-header >
+  <ion-toolbar class="custom-header">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <img src="../../assets/arrow-back.svg" class="back-arrow" (click)="onBack()">
+        <!-- <ion-icon name="arrow-back"></ion-icon> -->
+      </ion-col>
+      <ion-col size="7">
+         
+        </ion-col>
+      <ion-col class="help-icon" size="2">
+        <img src="../../assets/help.png" (click)="onHelp()">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-searchbar *ngIf="!showChips" class="custom-search" showCancelButton="never" [(ngModel)] = "searchVal" (ionClear)="onClear($event)" (ionChange)="onSearch($event)"></ion-searchbar>
+   <div *ngIf="showChips" class="mock-search-div">
+    <ion-grid class="mock" >
+        <ion-icon name="search" class="mock-icon"></ion-icon>
+      <ion-row class="custom-row padd-left">
+        <ion-col size="5" class="chips" *ngFor="let search of searchArr;let i = index"><span class="chip-text">{{search.searchName}}</span><ion-icon class="cross-icon" name="close-circle" (click)="clearItem(i)"></ion-icon></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  </div>
+  <div *ngIf="showSuggestions">
+    <p  class="search-content">you may also search for:</p>
+    <ion-grid>
+      <ion-row class="custom-row">
+        <ion-col size="2.95" *ngFor="let sug of suggestions | search:searchVal"  class="suggestions" (click)="onSearchItem(sug)">
+         <div class="suggestion-title">{{sug.searchName}}</div>
+         <div class="suggestion-posts">{{sug.posts}}</div>
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="custom-div">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+         <p class="views">200K</p>
+         <p class="view-content">Number of people talking about #fashion,#shoes</p>
+        </ion-col>
+        <ion-col size="6">
+          <p class="views">20K</p>
+          <p class="view-content">Number of kofluence influencers talking about #fashion,#shoes</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-segment class="custom-segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="topPosts" [ngClass]="segmentVal == 'topPosts' ? 'segmentBtnActive': 'segmentBtnInactive' ">
+        <ion-label class="custom-label">Top Posts</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="latestPosts" [ngClass]="segmentVal == 'latestPosts' ? 'segmentBtnActive': 'segmentBtnInactive' ">
+        <ion-label class="custom-label">Latest Posts</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div>
+    <ion-grid  *ngIf="segmentVal == 'topPosts'">
+<ion-row>
+  <ion-col *ngFor="let topPost of topPostRecords" size-md="4" size-lg="3" size-xs="6">
+    <div class="img-div">
+<img class="normal-img" [src]="topPost.img">
+<img class="overlay-img" src="../../assets/Overlay.svg">
+<div class="view-div">
+    <p class="stats"><img src="../../assets/Icon - Visibility - Filled.svg"><span>{{topPost.views}}</span></p>
+    <p class="stats"><img src="../../assets/Icon - Favorite - Sharp.svg"><span>{{topPost.likes}}</span></p>
+  </div>
+</div>
+  </ion-col>
+</ion-row>
+  </ion-grid>
+    <ion-grid  *ngIf="segmentVal == 'latestPosts'">
+        <ion-row>
+          <ion-col  *ngFor="let latestPost of latestPostsRecords" size-md="4" size-lg="3" size-xs="6">
+            <div class="img-div">
+            <img class="normal-img" [src]="latestPost.img">
+            <img class="overlay-img" src="../../assets/Overlay.svg">
+              <div class="view-div">
+                <p class="stats"><img src="../../assets/Icon - Visibility - Filled.svg"><span>{{latestPost.views}}</span></p>
+                <p class="stats"><img src="../../assets/Icon - Favorite - Sharp.svg"><span>{{latestPost.likes}}</span></p>
+              </div>  
+          </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <app-skeleton *ngIf="showSkeleton"></app-skeleton>
+        <div class="btn-aligmnt">
+        <div class="footerBtn" *ngIf="!showSkeleton">
+            <ion-button class="campaign-btn" (click)="onStart()">Start A Campaign</ion-button>
+        </div>
+      </div>
+
+  </div>
+</ion-content>
+

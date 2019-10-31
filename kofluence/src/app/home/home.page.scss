@@ -1,0 +1,176 @@
+ion-toolbar.custom-header{
+    --background:black;
+}
+ion-searchbar.custom-search{
+    border-radius: 10px;
+    --background:#ACACAC78;
+    padding: 0px 0px 3px 0px;
+}
+.search-content{
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 13px;
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
+}
+.suggestions{
+    background-color:#ffdf7f;
+    border-radius: 4px;
+    margin-right: 1.3px;
+    height: 35px;
+    margin-bottom: 3px;
+}
+.suggestion-title{
+    color: black;
+    font-weight: 600;
+    font-size: 11px;
+
+}
+.suggestion-posts{
+    color: black;
+    font-size: 10px;
+}
+.custom-row{
+    display: flex;
+    overflow: scroll;
+}
+.views{
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    text-align: center;;
+}
+.view-content{
+    color: black;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 2px;
+}
+.custom-segment{
+    border: none;
+}
+.segmentBtnActive{
+    border-bottom: 2px solid #ffbf00;
+    height: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    --background-checked: none;
+}
+.segmentBtnInactive{
+    border-bottom: none;
+    height: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.custom-label{
+    margin-top: 0px;
+    margin-bottom: 2px;
+    font-size: 15px;
+    color: black;
+    text-transform: capitalize;
+}
+.custom-div{
+    height: 70px;
+}
+
+.overlay-img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 98%;
+}
+.img-div{
+    position: relative;
+}
+.view-div{
+    position: absolute;
+    bottom: 10px;
+}
+.stats{
+    color: #fff;
+    margin: 0px;
+    margin-top: 3px;
+    font-size: 12px;
+   
+}
+.stats>img{
+    margin: -1px 8px;
+}
+.view-count{
+   margin-left:10px;
+}
+
+ion-button.campaign-btn{
+    --background: #ea5c52;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.footerBtn{
+    position: fixed;
+    bottom: 5%;
+}
+.back-arrow path{
+  fill: #fff;
+}
+
+.help-icon{
+    text-align: center;
+    margin-top: 5px;
+}
+.btn-aligmnt{
+    justify-content: center;
+    display: flex;
+}
+.chips{
+    background: #ffbf00;
+    border-radius:20px;
+    margin-right: 5px;
+    height: 30px;
+    padding-top: 0px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.cross-icon{
+    margin-top: 8px;
+}
+.chip-text{
+    vertical-align: top;
+    font-size: 14px;
+    padding-right: 2px;
+}
+.mock{
+    background:#ACACAC78;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    border-radius: 20px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+position: relative;
+}
+.mock-search-div{
+    padding: 0px 0px 3px 0px;
+}
+.mock-icon{
+    width: 21px;
+    height: 21px;
+    color: #7a7a7a;
+    position: absolute;
+    left: 14px;
+    top: 10px;
+
+}
+.padd-left{
+    padding-left: 35px;
+}
